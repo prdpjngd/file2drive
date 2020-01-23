@@ -1,7 +1,6 @@
 flask
 gunicorn
 requests
-urllib
+urllib3
 base64
 os
-ast
