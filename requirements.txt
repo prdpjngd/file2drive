@@ -1,2 +1,7 @@
 flask
 gunicorn
+requests
+ast
+urllib
+base64
+os

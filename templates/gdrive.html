@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>F2D : FILE</title>
+{% if warning!=1 %}
+<meta http-equiv="refresh" content="0;url=https://drive.google.com/file/d/{{ n_file_id }}" />
+{% endif %}
+</head>
+<body>
+{% if warning==1 %}
+<h3>Drive Quota exceeded or you are not logged in..</h3>
+{% endif %}
+</body>
+</html>

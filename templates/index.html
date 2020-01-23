@@ -1,11 +1,130 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>F2D : Drive URL Shortner</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+<style>
+#rcorners2 {
+  border-radius: 10px;
+  border: 2px solid grey;
+  padding: 7px;
+  width: 200px;
+}
+#u_profile {
+  padding: 7px;
+  border-width: 10px;
+}
+#u_profile  p {
+  padding: 15px;
+  margin: 0px;
+}
+img {
+  border-radius: 50%;
+}
+</style>
+</head>
+
 <body>
+  <div class="jumbotron text-center">
+    <h1>FILE 2 DRIVE</h1>
+    <p>------ URL Shortner for Google Drive links ------</p>
+  </div>
 
-<h1>MVLOVERS</h1>
+  <div class="container">
+    <div class="row">
 
-<p></p>
+      <div class="col-sm-4">
+        <h2>About You</h2>
+              {% if log_q==0 %}
+              <a class="btn darken-4 white black-text" href="javascript:login()" id="rcorners2" href="" style="text-transform:none">
+                <img width="20px" style="margin-bottom:2px; margin-right:7px" alt="Google sign-in"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                Login with Google
+              </a>
+              {% else %}
+              <div class="row" id="u_profile">
+                <img src="{{ pic_url }}" alt="Avatar" style="width:15%">
+                <p >{{ name }}</p>
+              </div>
+
+              <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/upload">Upload</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:logout()">Logout</a>
+                </li>
+              </ul>
+              {% endif %}
+
+      </div>
+      {% if welcome==0 %}
+      <div class="col-sm-4">
+        <h3>File Discription</h3>
+        <p>File Name : {{ f_name }}</p>
+        <p>File Size : {{ f_size }}</p>
+        <p>File Type : {{ f_type }}</p>
+      </div>
+        {% if d_btn==0 %}
+        <div class="col-sm-4">
+          <p>Oops...</p>
+          <button type="button" class="btn btn-warning">Can not download!</button>
+        </div>
+        {% else %}
+        <div class="col-sm-4">
+          <p>Note : File will be dowloaded into your Google drive account</p>
+          <button type="button" class="btn btn-warning" onclick="download()">Download</button>
+        </div>
+        {% endif %}
+      {% else %}
+      <div class="col-sm-4">
+        <h3>WELCOME!</h3>
+      </div>
+
+      <div class="col-sm-4">
+        <p>What we provide...</p><p> - We provide google drive links to short URLs</p>
+        <p> - Easy to share.</p>
+        <p> - No problem of Quota Exceed..</p>
+      </div>
+      {% endif %}
+      <div class="col-sm-4">
+        <p>Copyright 2020 : MVLOVERS</p>
+      </div>
+
+    </div>
+  </div>
+
+
+<script>
+function logout() {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+    location.reload();
+}
+function login(){
+  document.cookie = "redirection="+window.location.href;
+  window.location = "/login";
+}
+function download(){
+  var url = 'http://'+window.location.href.split('/')[2]+'/open'+window.location.href.split('/')[3]
+  window.open(url);
+}
+</script>
 
 </body>
 </html>
-
