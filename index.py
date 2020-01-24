@@ -9,7 +9,7 @@ app = Flask(__name__)
 #sensetive data
 client_id='559909010865-h91q914fnu6ihuthsb263q3e7j6aa8a3.apps.googleusercontent.com'
 client_secret='CxktXhjhEixPQbfueNAL4UBb'
-redirect_uri='https://file2drive.herokuapp.com/auth'
+redirect_uri='http://localhost:5000/auth'
 mya='AIzaSyDwTo4GXtTDJZ-asvqJD9VbUMw8CC2Ssus'
 
 
@@ -17,7 +17,7 @@ mya='AIzaSyDwTo4GXtTDJZ-asvqJD9VbUMw8CC2Ssus'
 #global inicialization block
 access_token=''
 refresh_token=''
-login_url='https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/drive.file+https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&redirect_uri='+redirect_uri+'&response_type=code&client_id='+client_id
+login_url='https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/drive+https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&redirect_uri='+redirect_uri+'&response_type=code&client_id='+client_id
 
 
 
