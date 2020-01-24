@@ -2,15 +2,16 @@ import requests
 import ast
 import urllib.parse
 import base64
+import os
 from flask import Flask, render_template, request, redirect, make_response
 app = Flask(__name__)
 
 
-#sensetive data
-client_id='559909010865-h91q914fnu6ihuthsb263q3e7j6aa8a3.apps.googleusercontent.com'
-client_secret='CxktXhjhEixPQbfueNAL4UBb'
-redirect_uri='http://localhost:5000/auth'
-mya='AIzaSyDwTo4GXtTDJZ-asvqJD9VbUMw8CC2Ssus'
+#sensetive data os.environ['S3_KEY']
+client_id=os.environ['c_i']
+client_secret=os.environ['c_s']
+redirect_uri='http://file2drive.herokuapp.com/auth'
+mya=os.environ['mya']
 
 
 
