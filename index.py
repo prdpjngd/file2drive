@@ -10,7 +10,7 @@ app = Flask(__name__)
 #sensetive data os.environ['S3_KEY']
 client_id=os.environ['c_i']
 client_secret=os.environ['c_s']
-redirect_uri='http://file2drive.herokuapp.com/auth'
+redirect_uri='https://file2drive.herokuapp.com/auth'
 mya=os.environ['mya']
 
 
