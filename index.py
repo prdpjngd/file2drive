@@ -18,7 +18,7 @@ mya=os.environ['mya']
 #global inicialization block
 access_token=''
 refresh_token=''
-login_url='https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/drive.file+https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&redirect_uri='+redirect_uri+'&response_type=code&client_id='+client_id+'&prompt=consent'
+login_url='https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/drive+https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&redirect_uri='+redirect_uri+'&response_type=code&client_id='+client_id+'&prompt=consent'
 
 
 
