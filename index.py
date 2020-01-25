@@ -10,7 +10,7 @@ app = Flask(__name__)
 #sensetive data os.environ['S3_KEY']
 client_id=os.environ['c_i']
 client_secret=os.environ['c_s']
-redirect_uri='https://file2drive.herokuapp.com/auth'
+redirect_uri=''
 mya=os.environ['mya']
 
 
@@ -94,6 +94,8 @@ def home():
 
 @app.route('/login')
 def login():
+    uri=str(request.url)
+    redirect_uri=uri.split('/')[0]+'//'+uri.split('/')[2]+'/auth'
     return redirect(login_url, code=302)
 
 @app.route('/auth',methods = ['GET'])
