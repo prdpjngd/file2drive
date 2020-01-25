@@ -29,13 +29,6 @@
     "mya": {
       "description": "get this value from Google API console",
       "value": ""
-  },
-  "addons": [
-  ],
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "free"
     }
   }
 }
