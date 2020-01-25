@@ -83,7 +83,7 @@ img {
         {% else %}
         <div class="col-sm-4">
           <p>Note : File will be dowloaded into your Google drive account</p>
-          <button type="button" class="btn btn-warning" onclick="download()">Download</button>
+          <button type="button" class="btn btn-warning" onclick="checklogin()">Download</button>
         </div>
         {% endif %}
       {% else %}
@@ -119,6 +119,32 @@ function logout() {
 function login(){
   document.cookie = "redirection="+window.location.href;
   window.location = "/login";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checklogin() {
+  var user=getCookie("a_t");
+  if (user != "") {
+    download();
+  }
+  else {
+    login();
+  }
 }
 function download(){
   var url = 'http://'+window.location.href.split('/')[2]+'/open'+window.location.href.split('/')[3]
