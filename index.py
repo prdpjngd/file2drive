@@ -19,7 +19,7 @@ mya=os.environ['mya']
 #global inicialization block
 access_token=''
 refresh_token=''
-login_url='https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/drive+https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&redirect_uri='+redirect_uri+'&response_type=code&client_id='+client_id+'&prompt=consent'
+
 
 
 
@@ -96,6 +96,7 @@ def home():
 def login():
     uri=str(request.url)
     redirect_uri=uri.split('/')[0]+'//'+uri.split('/')[2]+'/auth'
+    login_url='https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/drive+https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&redirect_uri='+redirect_uri+'&response_type=code&client_id='+client_id+'&prompt=consent'
     return redirect(login_url, code=302)
 
 @app.route('/auth',methods = ['GET'])
