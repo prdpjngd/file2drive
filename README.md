@@ -3,7 +3,7 @@
 
 This a drive url shortener used to hide your original file ID and share with your friends. Powered by your google Drive API.
 
-## installing
+## Installing
 
 ### The SIMPLE WAY
 
@@ -14,13 +14,13 @@ GET YOUR APP CREDENTIALS\
 STEP 3:
 put these variable in the heroku env. variables.\
 STEP 4:
-Boom!.... your done!\
+Boom!.... your done!
 
 
 ### The Legacy Way
 Simply clone the repository and run the main file:
 
-STEP 1:\
+STEP 1:
 ```sh
 git clone https://github.com/prdpjngd/file2drive.git
 cd file2drive
@@ -29,15 +29,15 @@ virtualenv -p /usr/bin/python3 venv
 pip install -r requirements.txt
 ```
 <br/>
-STEP 2: GET YOUR APP CREDENTIALS\
-STEP 3: put your variables (CREDENTIALS) in file index.py\
+STEP 2: GET YOUR APP CREDENTIALS  
+STEP 3: put your variables (CREDENTIALS) in file index.py  
 STEP 4:
-Boom!.... your done!\
+Boom!.... your done!  
+</br>
+### NOTE : test your first login because it will show the Uri mismatch error so put your url in the given url when error comes..
+</br>
 
-## NOTE : test your first login because it will show the Uri mismatch error so put your url in the given url when error comes..
-
-
-### how to get your  CREDENTIALS👇
+### How to get your  credentials👇
 ![​](https://telegra.ph/file/5c079bfcd7da0494d6abb.png)
 ```
 STEP 1: Turn on drive API
