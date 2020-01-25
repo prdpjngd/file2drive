@@ -10,7 +10,6 @@ app = Flask(__name__)
 #sensetive data os.environ['S3_KEY']
 client_id=os.environ['c_i']
 client_secret=os.environ['c_s']
-redirect_uri=''
 mya=os.environ['mya']
 
 
@@ -19,7 +18,7 @@ mya=os.environ['mya']
 #global inicialization block
 access_token=''
 refresh_token=''
-
+redirect_uri=''
 
 
 
@@ -102,7 +101,9 @@ def login():
 @app.route('/auth',methods = ['GET'])
 def auth():
     code = request.args.get('code')
-    code= urllib.parse.unquote(code)
+    #code= urllib.parse.unquote(code)
+    uri=str(request.url)
+    redirect_uri=uri.split('/')[0]+'//'+uri.split('/')[2]+'/auth'
     data = {
         'client_id': client_id,
         'client_secret': client_secret,
