@@ -28,14 +28,15 @@ virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
 pip install -r requirements.txt
 ```
-<br/>
-STEP 2: GET YOUR APP CREDENTIALS\
-STEP 3: put your variables (CREDENTIALS) in file index.py\
+STEP 2:
+GET YOUR APP CREDENTIALS\
+STEP 3:
+put these variable in index.py file.\
 STEP 4:
-Boom!.... your done!  
-<br/>
+Boom!.... your done!
+
 ### NOTE : test your first login because it will show the Uri mismatch error so put your url in the given url when error comes..
-<br/>
+
 
 ### How to get your  credentials👇
 ![​](https://telegra.ph/file/5c079bfcd7da0494d6abb.png)
